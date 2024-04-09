@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://crmy8lvhyrbpc"]
+[gd_scene load_steps=6 format=3 uid="uid://crmy8lvhyrbpc"]
 
-[ext_resource type="Script" path="res://tank.gd" id="1_l8fis"]
+[ext_resource type="Script" path="res://scenes/tank/tank.gd" id="1_0o53y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pi72b"]
 size = Vector3(1.5, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ajug"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_unthx"]
 height = 1.25
@@ -15,11 +17,12 @@ height = 0.9
 
 [node name="tank" type="Node3D"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
-script = ExtResource("1_l8fis")
+script = ExtResource("1_0o53y")
 
 [node name="body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
 mesh = SubResource("BoxMesh_pi72b")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ajug")
 
 [node name="head" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05259, -0.0157149)
