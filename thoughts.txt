@@ -1,0 +1,9 @@
+4/16/2024
+
+currently stuck on how the tank will fire projectiles.
+
+im thinking just have a bullet scene be added to the tree after press
+fire button. does it matter where in the tree is added?
+seems to work after i did that
+
+wish i could visualize the tree at runtime 

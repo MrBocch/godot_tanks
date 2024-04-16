@@ -2,9 +2,14 @@ extends Node3D
 
 @export var SPEED = 5.0
 @export var TURN_RADIUS = deg_to_rad(2.0)
+
+@onready var root = get_tree().get_root()
+
+var bullet
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	bullet = preload("res://scenes/bullet/bullet.tscn").instantiate()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +27,8 @@ func _process(delta):
 		self.position.x -= sin(self.rotation.y) * SPEED * delta
 		self.position.z -= cos(self.rotation.y) * SPEED * delta
 
-	
+	# add count down, not let people shoot tomuch
+	if Input.is_action_just_pressed("fire"):
+		root.add_child(bullet)
 	
 
