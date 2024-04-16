@@ -31,3 +31,6 @@ mesh = SubResource("CapsuleMesh_unthx")
 [node name="barrel" type="MeshInstance3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 0.0326842, -0.999466, 0, 0.999466, 0.0326842, 0, 0.197985, 0.785482)
 mesh = SubResource("CylinderMesh_0cyle")
+
+[node name="barrel" type="Marker3D" parent="."]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 1.93857e-18, 1.24855, 1.24299)

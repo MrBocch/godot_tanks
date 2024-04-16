@@ -12,6 +12,7 @@ config_version=5
 
 config/name="tanks"
 config/tags=PackedStringArray("project")
+run/main_scene="res://scenes/levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

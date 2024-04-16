@@ -4,6 +4,23 @@ currently stuck on how the tank will fire projectiles.
 
 im thinking just have a bullet scene be added to the tree after press
 fire button. does it matter where in the tree is added?
-seems to work after i did that
+seems to work after i did that, can only add one bullet to the scene
+"Can't add child 'bullet' to 'root', already has a parent 'root'"
+do i need to use arrays?
+
+lets try to get one to work how you want
 
 wish i could visualize the tree at runtime 
+
+have to pass in, the position of the tank to know were to instantiate this bullet 
+could a marker3d node be usefull here?, seems its not updated with the tanks position
+when moved. if i also have to add the movement code to the node then its pointless 
+iho
+
+ok this is not as easy as i thought it would be, maybe using the marker3d node
+makes sense?
+i can probably write a function that returns, the location of the barrel
+at anypoint in time, but i would have to think a little.
+I should do that instead of the marker3d right?
+
+this is alot more difficult than expected but nothing i cant do.
