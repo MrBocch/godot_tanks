@@ -1,9 +1,9 @@
 extends Area3D
 
-@export var SPEED = 1.0
+@export var SPEED = 15.0
 
-#  
-
+var BOUNCES = 0
+var BOUNCE_LIMIT = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +12,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += SPEED * delta
+	self.position.x += sin(self.rotation.y) * SPEED * delta
+	self.position.z += cos(self.rotation.y) * SPEED * delta
+

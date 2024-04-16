@@ -24,3 +24,21 @@ at anypoint in time, but i would have to think a little.
 I should do that instead of the marker3d right?
 
 this is alot more difficult than expected but nothing i cant do.
+
+ok, now i know how to instantiate() a scene
+preload the node, then create instances and add them too the tree
+
+placing them infront of the barrel with the correct, rotation + everything else
+is probably easy right?
+
+decided to make the bullets a spheare, dont have to worry about the bullet facing the correct way
+if you know whta i mean
+
+whenever i make a new 3d scene, make sure to always have it centered around the origin
+this removes headaches later on
+
+i want to spawn the ball, right after the barrel.
+adding bullet_instance.position.y &.x is easy enough
+
+the problem comes from .z
+my guess its just more trigonometry

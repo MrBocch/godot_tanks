@@ -37,6 +37,7 @@ light_energy = 0.65
 shadow_enabled = true
 
 [node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 mesh = SubResource("BoxMesh_5db7o")
@@ -44,8 +45,7 @@ mesh = SubResource("BoxMesh_5db7o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("BoxShape3D_gyj32")
 
-[node name="tank" parent="." instance=ExtResource("1_m8b3u")]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0.478297, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.35234e-08, -0.0926487, 0.995699, -4.0498e-09, 0.995699, 0.0926487, -1, -3.68736e-16, -4.37114e-08, 9.37733, 3.72547, 2.08165e-12)
+
+[node name="tank" parent="." instance=ExtResource("1_m8b3u")]

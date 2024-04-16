@@ -11,7 +11,7 @@ var bullet
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	bullet = preload("res://scenes/bullet/bullet.tscn").instantiate()
+	bullet = preload("res://scenes/bullet/bullet.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,10 +31,16 @@ func _process(delta):
 
 	# add count down, not let people shoot tomuch
 	if Input.is_action_just_pressed("fire"):
-		root.add_child(bullet)
-		bullet.position.x = self.position.x
-		bullet.position.z = self.position.z + 1.243
-		bullet.position.y = 1.249 + 0.5
+		var bullet_instance = bullet.instantiate()
+		
+		bullet_instance.position.y = 1.249 
+		bullet_instance.position.x = self.position.x
+		bullet_instance.position.z = self.position.z + 1.243
+		
+		bullet_instance.rotation.y = self.rotation.y
+		
+		root.add_child(bullet_instance)
+
 
 # were is the gun located?, pointing to? 
 func gun_point():
