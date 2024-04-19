@@ -17,4 +17,7 @@ func _process(delta):
 	self.position.z += acceleration.z * cos(self.rotation.y) * SPEED * delta
 	
 	if bounces > BOUNCE_LIMIT:
-		queue_free()
+		free_bullet()
+
+func free_bullet():
+	queue_free()

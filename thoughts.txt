@@ -102,3 +102,10 @@ use the collision mask thing
 
 i should implement a healthbar that sits ontop of the tank
 how will i do this?
+
+figured if a bullet hits the tank then the bullet should 
+be deleted, but since the bullet is still spawning at verytop
+of tank, "its hitting itself", i really need to fix this 
+
+i should look at adding particle effects to the game
+it does not look too complicated
