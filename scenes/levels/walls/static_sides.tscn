@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkexvllrrvq6n"]
+
+[ext_resource type="Script" path="res://scenes/levels/walls/static_sides.gd" id="1_k38ka"]
+[ext_resource type="Texture2D" uid="uid://badopfcc0rp" path="res://assets/textures/kenney_prototype-textures/PNG/Dark/texture_06.png" id="1_oqew5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rlqd0"]
+size = Vector3(40, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqg2g"]
+albedo_texture = ExtResource("1_oqew5")
+uv1_scale = Vector3(1.68, 1.68, 1.68)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ufb2c"]
+material = SubResource("StandardMaterial3D_bqg2g")
+size = Vector3(40, 2, 1)
+
+[node name="wall" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_k38ka")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rlqd0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ufb2c")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_rlqd0")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

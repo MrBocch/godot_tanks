@@ -68,3 +68,22 @@ also, how do i prevent the tank from just going thrue them? ray cast?
 
 adding a cooldown timer for shotting was easy enough.
 should i add a limit to ammo?
+
+how will prevent the tank from just phasing thrue walls?
+could i just change the parent node to get what i want?
+maybe its the movement code that has to be changed?
+
+so when i use the default script for a character body 3d node
+and change the wall parent node to a static body, it does not phase thrue the 
+wall, i really should learn all the node types and when to use them
+
+also why did i not make the walls static body types?
+makes sense for them to be static types, go change them
+
+how will i recode the movement for tank, i dont think 
+it will be very difficult.
+
+dont like how i repeat the same collision box
+for the static body wall, then for its child
+area3d node, must be doing something wrong right?
+
