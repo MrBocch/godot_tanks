@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_area_3d_area_entered(bullet):
+	
 	bullet.bounces += 1
 	bullet.acceleration.x *= -1
 	

@@ -87,3 +87,18 @@ dont like how i repeat the same collision box
 for the static body wall, then for its child
 area3d node, must be doing something wrong right?
 
+just fiddled around with the tank movement code, and seemed i got lucky
+its doing what it was about the same as before
+
+dont know what to do about this error doe
+character_tank.gd:32 @_physics_process(): The InputMap action "" does not exist
+
+the tank will only move forward and backwards, cant go sideways
+can i just ignore it?
+
+to fix the issue with, the wall treating the tank
+like a bullet when ever it rubbed against it the wrong way
+use the collision mask thing
+
+i should implement a healthbar that sits ontop of the tank
+how will i do this?

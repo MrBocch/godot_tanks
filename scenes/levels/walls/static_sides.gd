@@ -12,6 +12,8 @@ func _process(delta):
 
 
 func _on_area_3d_area_entered(bullet):
-	bullet.bounces += 1
-	bullet.acceleration.z *= -1
+	# sometimes the tank could rub on it the wrong way
+	if typeof(bullet) == 24:
+		bullet.bounces += 1
+		bullet.acceleration.z *= -1
 	
