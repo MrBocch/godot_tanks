@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://hq3nsgeehhxq"]
+
+[ext_resource type="Script" path="res://scenes/levels/base.gd" id="1_qgvs3"]
+[ext_resource type="Texture2D" uid="uid://cffhsuew0v70f" path="res://assets/textures/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_6426t"]
+[ext_resource type="PackedScene" uid="uid://cnrti10vcpn4k" path="res://scenes/levels/walls/sides.tscn" id="3_q2xlm"]
+[ext_resource type="PackedScene" uid="uid://b1ey7wshbqrrk" path="res://scenes/levels/walls/topbot.tscn" id="4_efef3"]
+[ext_resource type="PackedScene" uid="uid://crmy8lvhyrbpc" path="res://scenes/tank/tank.tscn" id="5_o2jv7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rtf0p"]
+sky_energy_multiplier = 0.15
+ground_bottom_color = Color(0.176471, 0.172549, 0.184314, 1)
+ground_horizon_color = Color(0.702941, 0.734314, 0.744118, 1)
+
+[sub_resource type="Sky" id="Sky_ahrk0"]
+sky_material = SubResource("ProceduralSkyMaterial_rtf0p")
+
+[sub_resource type="Environment" id="Environment_11e1y"]
+background_mode = 1
+background_color = Color(0.286275, 0.317647, 0.286275, 0.643137)
+sky = SubResource("Sky_ahrk0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbktl"]
+albedo_color = Color(0.854902, 0.854902, 0.854902, 1)
+albedo_texture = ExtResource("2_6426t")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5db7o"]
+material = SubResource("StandardMaterial3D_sbktl")
+size = Vector3(40, 1, 50)
+
+[node name="base" type="Node3D"]
+script = ExtResource("1_qgvs3")
+
+[node name="env" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_11e1y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(1, -6.97574e-16, 4.15924e-24, 4.15924e-24, 1.19249e-08, 1, -6.97574e-16, -1, 1.19249e-08, 0, 11.169, 0)
+light_energy = 0.65
+shadow_enabled = true
+
+[node name="arena" type="Node" parent="."]
+
+[node name="floor" type="Node3D" parent="arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="arena/floor"]
+mesh = SubResource("BoxMesh_5db7o")
+
+[node name="left" parent="arena" instance=ExtResource("3_q2xlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 25.5)
+
+[node name="right" parent="arena" instance=ExtResource("3_q2xlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -25.5)
+
+[node name="top" parent="arena" instance=ExtResource("4_efef3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.514, 2.08165e-12, 2.08165e-12)
+
+[node name="bot" parent="arena" instance=ExtResource("4_efef3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5142, 2.08165e-12, 2.08165e-12)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-2.10254e-08, -0.81822, 0.574905, 1.52155e-08, 0.574905, 0.81822, -1, 2.59509e-08, 3.62035e-10, 29.7929, 34.7173, 0.229157)
+fov = 45.9
+
+[node name="tank" parent="." instance=ExtResource("5_o2jv7")]
+
+[connection signal="area_entered" from="arena/left" to="." method="_on_left_area_entered"]
+[connection signal="area_entered" from="arena/right" to="." method="_on_right_area_entered"]
+[connection signal="area_entered" from="arena/top" to="." method="_on_top_area_entered"]
+[connection signal="area_entered" from="arena/bot" to="." method="_on_bot_area_entered"]

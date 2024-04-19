@@ -42,3 +42,29 @@ adding bullet_instance.position.y &.x is easy enough
 
 the problem comes from .z
 my guess its just more trigonometry
+that is incorrect, the only things that is "easy" is .y
+
+fix .x and .z, would have to think about it
+how long is the distance between the origin point of the tank, and the barrel
+
+4/18/2024
+
+i decided i will try to fix bullets spawning at the end of barrel issue later,
+
+how will i be building levels?
+
+planning on having walls that the bullet can bounce from
+guessing, first thought is to create a signal for a spefic wall
+that would change the acceleration of depending on what side it hit it from
+
+but i would need to code that for each wall that i will add to the game
+very cumbersome, 
+lets keep the score small for now. and as we progress and learn more, we add more
+
+im thinking have base level template, which all levels will be composed of
+then add individual walls scenes into each? still run into having 
+to make individual signals for each wall.
+also, how do i prevent the tank from just going thrue them? ray cast?
+
+adding a cooldown timer for shotting was easy enough.
+should i add a limit to ammo?
