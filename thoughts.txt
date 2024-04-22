@@ -109,3 +109,12 @@ of tank, "its hitting itself", i really need to fix this
 
 i should look at adding particle effects to the game
 it does not look too complicated
+
+found a very simple solution for spawning bullet right outside of 
+barrel, very simple no need for trig, i have thought of using a 
+Marker3d node, but I did not realise i needed its global postion
+and not its postion in the scene it belongs to.
+
+whats next? tank health, tank dies
+
+AI tank?

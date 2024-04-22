@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var root = get_tree().get_root()
+@onready var barrel_end = $Marker3D
 var bullet
 
 const SPEED = 7.0
@@ -13,6 +14,8 @@ func _ready():
 	bullet = preload("res://scenes/bullet/bullet.tscn")
 
 func _physics_process(delta):
+	
+
 	# tanks cant jump
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -22,13 +25,11 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_on_floor():
 		if Input.is_action_just_pressed("fire"):
+			
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.rotation.y = self.rotation.y
-			bullet_instance.position.y = 1.249 
-		
-			bullet_instance.position.x = self.position.x
-			bullet_instance.position.z = self.position.z
-		
+
+			bullet_instance.position = barrel_end.global_position
 			root.add_child(bullet_instance)
 
 		
