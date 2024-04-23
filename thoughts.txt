@@ -118,3 +118,11 @@ and not its postion in the scene it belongs to.
 whats next? tank health, tank dies
 
 AI tank?
+
+thought might as well add local multiplayer to play atleast locally on this machine with others
+thanks to
+https://www.gdquest.com/tutorial/godot/2d/local-multiplayer-input/
+would have never occured to me. i should be more mindful of what variables 
+make sense to be @exported. 
+the fpc addon im using in 5night_inFIME also exports the controls input map thing
+feel kinda dumb no figuring that out, but thats ok, study more

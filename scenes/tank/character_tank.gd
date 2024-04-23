@@ -2,7 +2,13 @@ extends CharacterBody3D
 
 @onready var root = get_tree().get_root()
 @onready var barrel_end = $Marker3D
-var bullet
+
+@export_group("controlls")
+@export var turn_right = "ui_right"
+@export var turn_left = "ui_left"
+@export var forward = "ui_up"
+@export var backward = "ui_down"
+@export var fire = "fire"
 
 const SPEED = 7.0
 const TURN_RADIUS = 2.5
@@ -10,6 +16,7 @@ const TURN_RADIUS = 2.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var bullet
 func _ready():
 	bullet = preload("res://scenes/bullet/bullet.tscn")
 
@@ -24,7 +31,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_on_floor():
-		if Input.is_action_just_pressed("fire"):
+		if Input.is_action_just_pressed(fire):
 			
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.rotation.y = self.rotation.y
@@ -33,7 +40,7 @@ func _physics_process(delta):
 			root.add_child(bullet_instance)
 
 		
-		var input_dir = Input.get_vector("","","ui_down", "ui_up")
+		var input_dir = Input.get_vector("","",backward, forward)
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
 			velocity.x = direction.x * SPEED
@@ -42,9 +49,9 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 	
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed(turn_left):
 			self.rotation.y += TURN_RADIUS * delta
-		elif Input.is_action_pressed("ui_right"):
+		elif Input.is_action_pressed(turn_right):
 			self.rotation.y -= TURN_RADIUS * delta
 	
 	move_and_slide()
