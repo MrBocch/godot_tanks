@@ -126,3 +126,19 @@ would have never occured to me. i should be more mindful of what variables
 make sense to be @exported. 
 the fpc addon im using in 5night_inFIME also exports the controls input map thing
 feel kinda dumb no figuring that out, but thats ok, study more
+
+i should atleast add controller support, pretty sure it will be very different considering
+a keyboard is very binary, but a joystick is not 
+
+exporting the color enum is preety cool. How do i color this tank
+thrue code? If you can do it thrue the IDE you must be able to do it thrue code
+
+also have to fix tanks rubbing into each other counts as being shot by bullet
+just use a different mask again? prob should fix the collision size again
+
+WOW set up the different tank colors all thrue the 
+node inspecter tab, THAT IS SO COOL, this makes things
+so easy, what i wanted to do something more complex
+than just change albedo color, how do i apply a camo?
+
+dont like how things look, apply a shader?

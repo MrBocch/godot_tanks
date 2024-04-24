@@ -10,6 +10,21 @@ extends CharacterBody3D
 @export var backward = "ui_down"
 @export var fire = "fire"
 
+@onready var materials = {
+	"red": load("res://scenes/tank/red.tres"),
+	"blue": load("res://scenes/tank/blue.tres"),
+	"grey": load("res://scenes/tank/grey.tres"),
+	"green": load("res://scenes/tank/green.tres")
+}
+@onready var meshes = {
+	"body": $body,
+	"head": $head,
+	"barrel": $head/barrel
+}
+@export_group("color")
+@export_enum("red", "green", "blue", "grey") var color: String
+
+
 const SPEED = 7.0
 const TURN_RADIUS = 2.5
 
@@ -19,9 +34,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var bullet
 func _ready():
 	bullet = preload("res://scenes/bullet/bullet.tscn")
+	meshes["body"].set_material_override(materials[color])
+	meshes["head"].set_material_override(materials[color])
+	meshes["barrel"].set_material_override(materials[color])
 
 func _physics_process(delta):
-	
 
 	# tanks cant jump
 	if not is_on_floor():
