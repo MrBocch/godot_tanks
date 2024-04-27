@@ -142,3 +142,18 @@ so easy, what i wanted to do something more complex
 than just change albedo color, how do i apply a camo?
 
 dont like how things look, apply a shader?
+
+very interesting, when i run game thrue the "hub"
+and the games does not crash unlike when ran thrue editor
+when the tanks ran into eachothe. 
+also fixed issue by changing collision layer
+to three. feel like im just running into solutions
+by complete luck
+
+setting up the walls for stage were easy because
+a bullet can only hit it from one side change is 
+acceleration in x or y accordingly but what about
+an on the middle obsticle that could be hit from any side?
+my guess is compose a mesh of mutilple area3d on each face?
+will have to try it out, but affraid of them colliding with
+each other and it acts buggy
