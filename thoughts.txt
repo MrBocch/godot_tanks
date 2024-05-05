@@ -157,3 +157,20 @@ an on the middle obsticle that could be hit from any side?
 my guess is compose a mesh of mutilple area3d on each face?
 will have to try it out, but affraid of them colliding with
 each other and it acts buggy
+
+should code a "level editor", have walls that i could resize in the editor
+to make things easier, thought to simply change the value an individual
+like its meshinstance3d, collisionshape3d, size property, but thats not a thing 
+apperently? you can read docs
+CollisionShape3D -> Shape3D 
+get_shape()
+set_shape()
+
+should prob come back to this. lets just get the basics down for now
+
+adding the collisions for, walls that cuold be hit from all sides feels 
+like a mess. 
+
+this is all mess and im not that far into this 
+
+when bullets collided into eachother they should beed freed()

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://brrdhg4vwen7t"]
+
+[ext_resource type="Script" path="res://scenes/levels/walls/all_sides.gd" id="1_kl6yv"]
+[ext_resource type="Texture2D" uid="uid://badopfcc0rp" path="res://assets/textures/kenney_prototype-textures/PNG/Dark/texture_06.png" id="2_syc24"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rlqd0"]
+size = Vector3(5, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqg2g"]
+albedo_texture = ExtResource("2_syc24")
+uv1_scale = Vector3(1.68, 1.68, 1.68)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ufb2c"]
+material = SubResource("StandardMaterial3D_bqg2g")
+size = Vector3(5, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qjnq"]
+size = Vector3(5, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npi1s"]
+size = Vector3(0.1, 2, 1)
+
+[node name="all_sides" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_kl6yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rlqd0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ufb2c")
+
+[node name="long_sides" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="long_sides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.496193)
+shape = SubResource("BoxShape3D_7qjnq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="long_sides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.485045)
+shape = SubResource("BoxShape3D_7qjnq")
+
+[node name="short_sides" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="short_sides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50291, 0, 0)
+shape = SubResource("BoxShape3D_npi1s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="short_sides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51637, 0, 0)
+shape = SubResource("BoxShape3D_npi1s")
+
+[connection signal="area_entered" from="long_sides" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="short_sides" to="." method="_on_short_sides_area_entered"]

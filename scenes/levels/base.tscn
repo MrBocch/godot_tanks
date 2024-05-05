@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://hq3nsgeehhxq"]
+[gd_scene load_steps=13 format=3 uid="uid://hq3nsgeehhxq"]
 
 [ext_resource type="Script" path="res://scenes/levels/base.gd" id="1_qgvs3"]
 [ext_resource type="Texture2D" uid="uid://cffhsuew0v70f" path="res://assets/textures/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_6426t"]
 [ext_resource type="PackedScene" uid="uid://da42cbwd0dsfd" path="res://scenes/levels/walls/static_topbot.tscn" id="4_3kwmq"]
 [ext_resource type="PackedScene" uid="uid://bkexvllrrvq6n" path="res://scenes/levels/walls/static_sides.tscn" id="5_b1y8w"]
 [ext_resource type="PackedScene" uid="uid://crmy8lvhyrbpc" path="res://scenes/tank/tank.tscn" id="5_o2jv7"]
+[ext_resource type="PackedScene" uid="uid://brrdhg4vwen7t" path="res://scenes/levels/walls/all_sides.tscn" id="6_fk243"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rtf0p"]
 sky_energy_multiplier = 0.15
@@ -90,3 +91,6 @@ turn_left = "ui_left2"
 forward = "ui_up2"
 backward = "ui_down2"
 fire = "fire2"
+
+[node name="all_sides" parent="." instance=ExtResource("6_fk243")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.608, 1, 1.256)

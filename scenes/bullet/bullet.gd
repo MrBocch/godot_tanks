@@ -21,3 +21,9 @@ func _process(delta):
 
 func free_bullet():
 	queue_free()
+
+
+func _on_area_entered(area):
+	if area.name == "bullet":
+		area.free_bullet()
+		self.free_bullet()
