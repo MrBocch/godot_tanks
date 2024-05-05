@@ -81,11 +81,11 @@ transform = Transform3D(-2.10254e-08, -0.81822, 0.574905, 1.52155e-08, 0.574905,
 fov = 45.9
 
 [node name="tank" parent="." instance=ExtResource("5_o2jv7")]
-transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 1.285, 8.89224, 14.975)
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0.00955975, 8.89224, 15.2274)
 color = "blue"
 
 [node name="tank2" parent="." instance=ExtResource("5_o2jv7")]
-transform = Transform3D(1, -3.48787e-16, 1.74846e-07, 3.48787e-16, 1, -3.48787e-16, -1.74846e-07, 3.48787e-16, 1, -2.0785, 8.89224, -9.2934)
+transform = Transform3D(1, -3.48787e-16, 1.74846e-07, 3.48787e-16, 1, -3.48787e-16, -1.74846e-07, 3.48787e-16, 1, 0.00385261, 8.89224, -14.83)
 turn_right = "ui_right2"
 turn_left = "ui_left2"
 forward = "ui_up2"
@@ -93,4 +93,3 @@ backward = "ui_down2"
 fire = "fire2"
 
 [node name="all_sides" parent="." instance=ExtResource("6_fk243")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.608, 1, 1.256)
