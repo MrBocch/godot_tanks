@@ -189,3 +189,6 @@ ill try manually
 
 making each level by duplicating te all sides scene over and over again
 is a serious pain
+
+how will i make this menu. should actually
+watch a tutorial this time.
