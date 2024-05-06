@@ -180,3 +180,12 @@ menu
 controller support
 AI
 online multiplayer?
+
+
+whenever i try to duplicate the base.tscn in FileSystem
+you get error, it cant find the scene? but if you keep the name
+the same, you get already a scene named that error. Am i doing somehting wrong?
+ill try manually
+
+making each level by duplicating te all sides scene over and over again
+is a serious pain

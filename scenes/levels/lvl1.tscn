@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hq3nsgeehhxq"]
+[gd_scene load_steps=11 format=3 uid="uid://doo6xlv7bdypj"]
 
-[ext_resource type="Texture2D" uid="uid://cffhsuew0v70f" path="res://assets/textures/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_6426t"]
-[ext_resource type="PackedScene" uid="uid://bkexvllrrvq6n" path="res://scenes/levels/walls/static_sides.tscn" id="2_qldvq"]
-[ext_resource type="PackedScene" uid="uid://da42cbwd0dsfd" path="res://scenes/levels/walls/static_topbot.tscn" id="3_tewwo"]
-[ext_resource type="PackedScene" uid="uid://brrdhg4vwen7t" path="res://scenes/levels/walls/all_sides.tscn" id="5_s4x2h"]
+[ext_resource type="Texture2D" uid="uid://cffhsuew0v70f" path="res://assets/textures/kenney_prototype-textures/PNG/Green/texture_09.png" id="1_yhflc"]
+[ext_resource type="PackedScene" uid="uid://bkexvllrrvq6n" path="res://scenes/levels/walls/static_sides.tscn" id="2_cg02y"]
+[ext_resource type="PackedScene" uid="uid://da42cbwd0dsfd" path="res://scenes/levels/walls/static_topbot.tscn" id="3_a8od5"]
+[ext_resource type="PackedScene" uid="uid://brrdhg4vwen7t" path="res://scenes/levels/walls/all_sides.tscn" id="4_boo8d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rtf0p"]
 sky_energy_multiplier = 0.15
@@ -22,7 +22,7 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbktl"]
 albedo_color = Color(0.854902, 0.854902, 0.854902, 1)
-albedo_texture = ExtResource("2_6426t")
+albedo_texture = ExtResource("1_yhflc")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -61,20 +61,37 @@ mesh = SubResource("BoxMesh_5db7o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0282273, 0)
 shape = SubResource("BoxShape3D_4mcb2")
 
-[node name="right" parent="arena" instance=ExtResource("2_qldvq")]
+[node name="right" parent="arena" instance=ExtResource("2_cg02y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -25.526)
 
-[node name="left" parent="arena" instance=ExtResource("2_qldvq")]
+[node name="left" parent="arena" instance=ExtResource("2_cg02y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 25.526)
 
-[node name="bot" parent="arena" instance=ExtResource("3_tewwo")]
+[node name="bot" parent="arena" instance=ExtResource("3_a8od5")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 20.5, 2.08165e-12, 2.08165e-12)
 
-[node name="top" parent="arena" instance=ExtResource("3_tewwo")]
+[node name="top" parent="arena" instance=ExtResource("3_a8od5")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -20.5, 2.08165e-12, 2.08165e-12)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-2.10254e-08, -0.81822, 0.574905, 1.52155e-08, 0.574905, 0.81822, -1, 2.59509e-08, 3.62035e-10, 29.7929, 34.7173, 0.229157)
 fov = 45.9
 
-[node name="all_sides" parent="." instance=ExtResource("5_s4x2h")]
+[node name="obstacles" type="Node3D" parent="."]
+
+[node name="all_sides" parent="obstacles" instance=ExtResource("4_boo8d")]
+
+[node name="all_sides6" parent="obstacles" instance=ExtResource("4_boo8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -12.9)
+
+[node name="all_sides5" parent="obstacles" instance=ExtResource("4_boo8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 12.9045)
+
+[node name="all_sides2" parent="obstacles" instance=ExtResource("4_boo8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7091, 1, 0)
+
+[node name="all_sides3" parent="obstacles" instance=ExtResource("4_boo8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98065, 1, 0)
+
+[node name="all_sides4" parent="obstacles" instance=ExtResource("4_boo8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98065, 1, 0)
