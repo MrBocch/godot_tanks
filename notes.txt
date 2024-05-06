@@ -174,3 +174,9 @@ like a mess.
 this is all mess and im not that far into this 
 
 when bullets collided into eachother they should beed freed()
+
+things to add
+menu
+controller support
+AI
+online multiplayer?
