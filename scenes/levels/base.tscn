@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://hq3nsgeehhxq"]
+[gd_scene load_steps=12 format=3 uid="uid://hq3nsgeehhxq"]
 
 [ext_resource type="Texture2D" uid="uid://cffhsuew0v70f" path="res://assets/textures/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_6426t"]
 [ext_resource type="PackedScene" uid="uid://bkexvllrrvq6n" path="res://scenes/levels/walls/static_sides.tscn" id="2_qldvq"]
 [ext_resource type="PackedScene" uid="uid://da42cbwd0dsfd" path="res://scenes/levels/walls/static_topbot.tscn" id="3_tewwo"]
 [ext_resource type="PackedScene" uid="uid://brrdhg4vwen7t" path="res://scenes/levels/walls/all_sides.tscn" id="5_s4x2h"]
+[ext_resource type="PackedScene" uid="uid://crmy8lvhyrbpc" path="res://scenes/tank/tank.tscn" id="6_wulmh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rtf0p"]
 sky_energy_multiplier = 0.15
@@ -73,8 +74,12 @@ transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-
 [node name="top" parent="arena" instance=ExtResource("3_tewwo")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -20.5, 2.08165e-12, 2.08165e-12)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-2.10254e-08, -0.81822, 0.574905, 1.52155e-08, 0.574905, 0.81822, -1, 2.59509e-08, 3.62035e-10, 29.7929, 34.7173, 0.229157)
-fov = 45.9
-
 [node name="all_sides" parent="." instance=ExtResource("5_s4x2h")]
+
+[node name="tank" parent="." instance=ExtResource("6_wulmh")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 7.49708, 8.9314)
+color = "green"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-2.10254e-08, -0.81822, 0.574905, 1.52155e-08, 0.574905, 0.81822, -1, 2.59509e-08, 3.6202e-10, 29.7929, 34.7173, 0.229157)
+fov = 45.9
