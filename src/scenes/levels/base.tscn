@@ -77,8 +77,16 @@ transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-
 [node name="all_sides" parent="." instance=ExtResource("5_s4x2h")]
 
 [node name="tank" parent="." instance=ExtResource("6_wulmh")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 7.49708, 16.7691)
+turn_right = "ui_right2"
+turn_left = "ui_left2"
+forward = "ui_up2"
+backward = "ui_down2"
+fire = "fire2"
+
+[node name="tank2" parent="." instance=ExtResource("6_wulmh")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 7.49708, 8.9314)
-color = "green"
+color = "blue"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-2.10254e-08, -0.81822, 0.574905, 1.52155e-08, 0.574905, 0.81822, -1, 2.59509e-08, 3.6202e-10, 29.7929, 34.7173, 0.229157)
